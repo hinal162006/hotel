@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 44" width="168" height="35">
+  <circle cx="16" cy="22" r="12" fill="none" stroke="#C9A15A" stroke-width="1.6"/>
+  <path d="M9 22 Q16 12 23 22 Q16 32 9 22 Z" fill="#C9A15A" opacity="0.85"/>
+  <text x="38" y="19" font-family="Georgia, 'Times New Roman', serif" font-size="14" letter-spacing="2.5" fill="#0F2A33">AZURE</text>
+  <text x="38" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" letter-spacing="5" fill="#C9A15A">COVE HOTEL</text>
+</svg>
