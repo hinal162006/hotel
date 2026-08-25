@@ -1,0 +1,279 @@
+/* ==========================================================
+   AZURE COVE HOTEL — header + hero slider
+   ========================================================== */
+:root {
+  --deep: #0F2A33;
+  --deep-2: #16394478;
+  --sand: #F3ECDD;
+  --gold: #C9A15A;
+  --gold-dim: #8C7038;
+  --line: rgba(243, 236, 221, 0.16);
+
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--deep);
+  color: var(--sand);
+  font-family: var(--body);
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------------- Nav ---------------- */
+.navbar {
+  background: var(--deep);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand);
+  opacity: 0.82;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  opacity: 1;
+  color: var(--gold);
+}
+
+.nav-links a.cta {
+  border: 1px solid var(--gold);
+  padding: 9px 18px;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+.nav-links a.cta:hover {
+  background: var(--gold);
+  color: var(--deep);
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.navbar-toggler span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--sand);
+  margin: 4px 0;
+}
+
+/* ---------------- Hero / Swiper ---------------- */
+.banner_wrapper { background: var(--deep); }
+
+.mySwiper { width: 100%; height: 82vh; min-height: 520px; }
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background lives on ::before so it can be transformed on the GPU.
+   Transforming a layer is cheap; animating background-size is not. */
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.06);
+  transition: transform 6.5s linear;
+  will-change: transform;
+}
+
+.swiper-slide-active::before { transform: scale(1); }
+
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(100deg, rgba(15,42,51,0.92) 0%, rgba(15,42,51,0.5) 50%, rgba(15,42,51,0.2) 100%);
+}
+
+.slide-caption {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 0 24px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Caption pieces rise in one after another on the active slide. */
+.slide-caption > * {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.swiper-slide-active .slide-caption > * {
+  animation: caption-in 0.85s cubic-bezier(0.22, 0.68, 0.28, 1) forwards;
+}
+
+.swiper-slide-active .slide-caption .eyebrow  { animation-delay: 0.20s; }
+.swiper-slide-active .slide-caption h1        { animation-delay: 0.30s; }
+.swiper-slide-active .slide-caption p         { animation-delay: 0.40s; }
+.swiper-slide-active .slide-caption .btn-gold { animation-delay: 0.50s; }
+
+@keyframes caption-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-caption .eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.slide-caption h1 {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  margin: 0 0 20px;
+  color: var(--sand);
+}
+
+.slide-caption p {
+  font-size: 16px;
+  color: rgba(243,236,221,0.82);
+  margin: 0 auto 28px;
+  max-width: 460px;
+}
+
+.btn-gold {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep);
+  padding: 14px 26px;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.btn-gold:hover { background: #E0C182; }
+
+.swiper-pagination-bullet {
+  background: var(--sand);
+  opacity: 0.4;
+  width: 9px;
+  height: 9px;
+  transition: opacity 0.35s ease, background-color 0.35s ease, transform 0.35s ease;
+}
+.swiper-pagination-bullet:hover { opacity: 0.75; }
+.swiper-pagination-bullet-active {
+  background: var(--gold);
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+/* Slide photography (Unsplash license). Set on ::before, not the slide itself. */
+.slide-cove::before {
+  background-image:
+    linear-gradient(100deg, rgba(15,42,51,0.35) 0%, rgba(15,42,51,0.1) 60%),
+    url("../images/slide-cove.jpg");
+}
+.slide-suite::before {
+  background-image:
+    linear-gradient(100deg, rgba(15,42,51,0.35) 0%, rgba(15,42,51,0.1) 60%),
+    url("../images/slide-suite.jpg");
+}
+.slide-terrace::before {
+  background-image:
+    linear-gradient(100deg, rgba(15,42,51,0.35) 0%, rgba(15,42,51,0.1) 60%),
+    url("../images/slide-terrace.jpg");
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 720px) {
+  .navbar-toggler { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--deep);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    display: none;
+    gap: 18px;
+  }
+  .nav-links.open { display: flex; }
+  .navbar { position: relative; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-gold, .nav-links a { transition: none; }
+
+  /* No drift, no stagger — captions just appear. */
+  .swiper-slide::before,
+  .swiper-slide-active::before {
+    transition: none;
+    transform: none;
+  }
+  .slide-caption > * {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+  .swiper-pagination-bullet { transition: none; }
+  .swiper-pagination-bullet-active { transform: none; }
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
