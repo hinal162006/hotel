@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure Cove Hotel</title>
+
+  <!-- Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- First hero image: fetch early so slide one is painted, not faded in blank -->
+  <link rel="preload" as="image" href="images/slide-cove.jpg">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <!-- Site styles -->
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.svg" alt="Azure Cove Hotel">
+        </a>
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Rooms</a></li>
+          <li><a href="#">Dining</a></li>
+          <li><a href="#">Spa</a></li>
+          <li><a href="#" class="cta">Book Now</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="banner_wrapper">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide-cove">
+          <div class="slide-caption">
+            <span class="eyebrow">Private cove, Amalfi coast</span>
+            <h1>Wake up to the water, every morning.</h1>
+            <p>Twenty-two rooms built into the cliffside, each with a
+              private terrace facing the cove.</p>
+            <a href="#" class="btn-gold">Check availability</a>
+          </div>
+        </div>
+        <div class="swiper-slide slide-suite">
+          <div class="slide-caption">
+            <span class="eyebrow">Signature suites</span>
+            <h1>Where the room is half the reason you came.</h1>
+            <p>Hand-plastered walls, stone soaking tubs, and a terrace
+              that ends where the cliff does.</p>
+            <a href="#" class="btn-gold">Explore suites</a>
+          </div>
+        </div>
+        <div class="swiper-slide slide-terrace">
+          <div class="slide-caption">
+            <span class="eyebrow">Sunset terrace, open nightly</span>
+            <h1>Dinner arrives with the tide.</h1>
+            <p>Local seafood, coastal wine, and a table that watches the
+              sun go down over the water.</p>
+            <a href="#" class="btn-gold">Reserve a table</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+  <script src="JS/script.js"></script>
+</body>
+
+</html>
