@@ -39,13 +39,6 @@ Hotel-Project/
 └── images/
     └── (project images)
 
-🚀 How to Run the Project
-
-1. Download or clone this project.
-2. Open the project folder.
-3. Open "index.html" in any web browser.
-4. The hotel website will be displayed.
-
 🎯 Purpose of the Project
 
 The main purpose of this project is to create a user-friendly and attractive hotel website using front-end web development technologies.
